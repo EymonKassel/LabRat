@@ -15,11 +15,14 @@ public class PlayerController : MonoBehaviour {
     }
     
     private void Update() {
-        _position.x = Input.GetAxisRaw("Horizontal");
-        _position.y = Input.GetAxisRaw("Vertical");
+        HandleInputs();
     }
     private void FixedUpdate() {
         Move();
+    }
+    private void HandleInputs() {
+        _position.x = Input.GetAxisRaw("Horizontal");
+        _position.y = Input.GetAxisRaw("Vertical");
     }
     private void Move() {
         // Make better later

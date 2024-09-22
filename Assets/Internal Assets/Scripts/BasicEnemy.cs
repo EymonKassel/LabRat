@@ -5,6 +5,8 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour {
     [Header("Attributes")]
     private float _movementSpeed = 5f;
+    
+    public int Health = 1;
 
 
     //[Header("References")]
