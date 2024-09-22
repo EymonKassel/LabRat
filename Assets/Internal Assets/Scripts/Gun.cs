@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour {
     [SerializeField]
     private Transform _firePoint;
     [SerializeField]
-    private GameObject _basicBullet;
+    private GameObject _basicBulletPrefab;
     [SerializeField]
     private float _basicBulletForce = 20f;
 
@@ -26,9 +26,9 @@ public class Gun : MonoBehaviour {
     private void Shoot() {
         switch ( _currentShootingType ) {
             case ShootingType.Basic:
-                GameObject bullet = Instantiate(_basicBullet, _firePoint.position, _firePoint.rotation);
-                Rigidbody2D rb = bullet.GetComponentInChildren<Rigidbody2D>();
-                rb.AddForce(_firePoint.up * _basicBulletForce, ForceMode2D.Impulse);
+                GameObject basicBullet = Instantiate(_basicBulletPrefab, _firePoint.position, _firePoint.rotation);
+                Rigidbody2D basicBulletRB = basicBullet.GetComponentInChildren<Rigidbody2D>();
+                basicBulletRB.AddForce(_firePoint.up * _basicBulletForce, ForceMode2D.Impulse);
                 break;
             case ShootingType.Ricochet:
 
