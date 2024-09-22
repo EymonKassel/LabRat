@@ -11,12 +11,12 @@ public class AudioManager : Manager {
 
     [Header("Audio Clips")]
     [SerializeField]
-    private AudioClip _backgroundMusic;
+    public AudioClip BackgroundMusic;
     [SerializeField]
-    private AudioClip _playerShoot;
+    public AudioClip PlayerShoot;
 
     private void Start() {
-        _musicSourse.clip = _backgroundMusic;
+        _musicSourse.clip = BackgroundMusic;
         _musicSourse.Play();
     }
 

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D _rb;
 
     private void Awake() {
-        _rb = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
     
     private void Update() {

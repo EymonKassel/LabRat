@@ -6,7 +6,8 @@ public class BasicEnemy : MonoBehaviour {
     [Header("Attributes")]
     [SerializeField]
     private float _movementSpeed = 5f;
-    public int Health = 1;
+    public int MaxHealth = 1;
+    private int _currentHealth;
     [SerializeField]
     private float _lineOfSite = 5f;
     [SerializeField]
@@ -17,16 +18,22 @@ public class BasicEnemy : MonoBehaviour {
 
     private float _distanceFromPlayer;
 
-    //[Header("References")]
     private Rigidbody2D _rb;
 
     private void Awake() {
         _rb = GetComponentInChildren<Rigidbody2D>();
-        _player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+    private void Start() {
+        _currentHealth = MaxHealth;
     }
 
     private void Update() {
         _distanceFromPlayer = Vector2.Distance(_player.position, transform.position);
+
+        if ( _currentHealth <= 0 ) {
+            Destroy(gameObject);
+        }
 
         if ( _distanceFromPlayer < _attackRange ) {
             Attack();
@@ -42,6 +49,14 @@ public class BasicEnemy : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, _player.position, _movementSpeed * Time.deltaTime);
         }
     }
+  
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if ( collision.gameObject.layer == 10 ) {
+            Debug.Log("ouch");
+            _currentHealth--;
+        }
+    }
+
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _lineOfSite);
