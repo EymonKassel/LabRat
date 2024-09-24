@@ -8,6 +8,7 @@ TagManager:
   - EnemyBody
   - Enemy
   - Bullet
+  - AudioManager
   layers:
   - Default
   - TransparentFX

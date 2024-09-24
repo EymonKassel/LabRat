@@ -13,8 +13,11 @@ public class Gun : MonoBehaviour {
     [SerializeField]
     private ShootingType _currentShootingType;
 
-    
+    AudioManager _audioManager;
 
+    private void Awake() {
+        _audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     private void Update() {
         RotateGunAroundAnchor();
 
@@ -29,6 +32,7 @@ public class Gun : MonoBehaviour {
                 GameObject basicBullet = Instantiate(_basicBulletPrefab, _firePoint.position, _firePoint.rotation);
                 Rigidbody2D basicBulletRB = basicBullet.GetComponentInChildren<Rigidbody2D>();
                 basicBulletRB.AddForce(_firePoint.up * _basicBulletForce, ForceMode2D.Impulse);
+                _audioManager.PlaySFX(_audioManager.PlayerShoot);
                 break;
             case ShootingType.Ricochet:
 

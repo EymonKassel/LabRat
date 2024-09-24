@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public int CurrentHealth = 1;
+    [SerializeField]
+    private int _maxHealth = 1;
     [SerializeField]
     private float _movementSpeed = 5f;
 
@@ -11,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D _rb;
 
     private void Awake() {
-        _rb = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
     
     private void Update() {
