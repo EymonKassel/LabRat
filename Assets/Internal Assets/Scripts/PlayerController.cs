@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public int CurrentHealth = 1;
+    [SerializeField]
+    private int _maxHealth = 1;
     [SerializeField]
     private float _movementSpeed = 5f;
 

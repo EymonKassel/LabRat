@@ -37,12 +37,16 @@ public class ShootingEnemy : MonoBehaviour {
             Follow();
         }
     }
-    private void Attack() {
-        Debug.Log("attacking");
+    private IEnumerator Attack() {
+        
+        yield return new WaitForSeconds(1);
     }
+
+    
     private void Follow() {
         if ( _distanceFromPlayer < _lineOfSite ) {
             transform.position = Vector2.MoveTowards(transform.position, _player.position, _movementSpeed * Time.deltaTime);
+            
         }
     }
     private void OnDrawGizmosSelected() {
