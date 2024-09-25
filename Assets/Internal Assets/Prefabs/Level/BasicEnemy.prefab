@@ -48,9 +48,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 4
-  Health: 1
+  MaxHealth: 1
   _lineOfSite: 20
   _attackRange: 4
+  AttackPower: 1
+  spawns:
+  - enemy: {fileID: 0}
+    position: {x: 0, y: 0}
+  - enemy: {fileID: 0}
+    position: {x: 0, y: 0}
 --- !u!212 &6796138654009536412
 SpriteRenderer:
   m_ObjectHideFlags: 0
