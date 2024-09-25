@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
 public class BasicEnemy : MonoBehaviour {
     [Header("Attributes")]
@@ -24,6 +28,7 @@ public class BasicEnemy : MonoBehaviour {
 
     private bool _isAttacking;
     private IEnumerator _attackCoroutine;
+    [SerializeField] EnemySpawn[] spawns;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
@@ -67,14 +72,12 @@ public class BasicEnemy : MonoBehaviour {
         _animator.SetBool("IsAttacking", false);
     }
     private void Follow() {
-        if ( _distanceFromPlayer < _lineOfSite ) {
-            _animator.SetBool("IsMoving", true);
-            transform.position = Vector2.MoveTowards(transform.position, _playerPosition.position, _movementSpeed * Time.deltaTime);
-        }
+        Vector3 direction = (_playerController.transform.position - transform.position).normalized;
+        _rb.MovePosition(transform.position + direction * _movementSpeed * Time.deltaTime);
     }
   
     private void OnCollisionEnter2D(Collision2D collision) {
-        if ( collision.gameObject.layer == 10 ) {
+        if ( collision.gameObject.GetComponent<BasicBullet>() != null ) {
             Debug.Log("ouch");
             _currentHealth--;
         }
@@ -86,4 +89,11 @@ public class BasicEnemy : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _attackRange);
     }
+}
+
+[Serializable]
+public class EnemySpawn
+{
+    public BasicEnemy enemy;
+    public Vector2 position;
 }
