@@ -20,14 +20,16 @@ public class BasicEnemy : MonoBehaviour {
 
     private float _distanceFromPlayer;
     private Rigidbody2D _rb;
+    private Animator _animator;
 
     private bool _isAttacking;
     private IEnumerator _attackCoroutine;
 
     private void Awake() {
-        _rb = GetComponentInChildren<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         _playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _animator = GetComponent<Animator>();
     }
     private void Start() {
         _currentHealth = MaxHealth;
@@ -36,7 +38,13 @@ public class BasicEnemy : MonoBehaviour {
     private void Update() {
         _distanceFromPlayer = Vector2.Distance(_playerPosition.position, transform.position);
 
+        if (_rb.velocity.magnitude <= 0.1f) {
+            _animator.SetBool("IsMoving", false);
+        }
+
         if ( _currentHealth <= 0 ) {
+            // Improve later
+            _animator.SetBool("IsDead", true);
             Destroy(gameObject);
         }
 
@@ -52,12 +60,15 @@ public class BasicEnemy : MonoBehaviour {
     }
     private IEnumerator Attack() {
         _isAttacking = true;
+        _animator.SetBool("IsAttacking", true);
         _playerController.CurrentHealth -= AttackPower;
         yield return new WaitForSeconds(1);
         _isAttacking = false;
+        _animator.SetBool("IsAttacking", false);
     }
     private void Follow() {
         if ( _distanceFromPlayer < _lineOfSite ) {
+            _animator.SetBool("IsMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, _playerPosition.position, _movementSpeed * Time.deltaTime);
         }
     }
