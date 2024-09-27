@@ -10,7 +10,6 @@ public class BasicBullet : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Some");
         Destroy(gameObject);
     }
 }
