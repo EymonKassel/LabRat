@@ -189,7 +189,7 @@ MonoBehaviour:
   Rb: {fileID: 5688938357017808779}
   Animator: {fileID: 2529419273994545502}
   RetreatRange: 4
-  BulletPrefab: {fileID: 1250557124098745510, guid: 6ad2cf0d2ab61d5408fd6475756189bf, type: 3}
+  BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _cooldown: 1
   _middleBulletForce: 20
   _sideBulletsForce: 20
