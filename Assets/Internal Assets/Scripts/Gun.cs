@@ -68,7 +68,7 @@ public class Gun : MonoBehaviour {
 
                 break;
             default:
-                Debug.Log("Unknown shooting type");
+                Debug.LogError("Unknown shooting type");
                 break;
         }
     }
