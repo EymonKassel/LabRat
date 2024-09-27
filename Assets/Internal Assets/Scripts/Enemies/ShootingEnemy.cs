@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootingEnemy : Enemy {
@@ -7,6 +8,10 @@ public class ShootingEnemy : Enemy {
     protected float RetreatRange = 2f;
     [SerializeField]
     protected GameObject BulletPrefab;
+    [SerializeField]
+    protected float _cooldown = 1f;
+    [SerializeField]
+    protected float _bulletForce = 20f;
     protected Rigidbody2D BulletPrefabRB;
 
     protected bool IsAttacking;
@@ -15,8 +20,19 @@ public class ShootingEnemy : Enemy {
 
     protected override void Update() {
         base.Update();
-
         GetDirectionToPlayer();
+        if (DistanceFromPlayer < RetreatRange)
+            Retreat();
+        else if (DistanceFromPlayer < AttackRange)
+        {
+            if (!IsAttacking)
+            {
+                AttackCoroutine = Attack();
+                StartCoroutine(AttackCoroutine);
+            }
+        }
+        else
+            Follow();
     }
     protected virtual void GetDirectionToPlayer() {
         Direction = ( PlayerController.transform.position - transform.position ).normalized;
@@ -35,4 +51,15 @@ public class ShootingEnemy : Enemy {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, RetreatRange);
     }
-}
+
+
+    protected virtual IEnumerator Attack()
+    {
+        IsAttacking = true;
+
+        GameObject bulletPrefab = Instantiate(BulletPrefab, transform.position, transform.rotation);
+        bulletPrefab.GetComponent<Rigidbody2D>().AddForce(Direction * _bulletForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(_cooldown);
+        IsAttacking = false;
+    }
+ }
