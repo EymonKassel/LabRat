@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1655,6 +1659,10 @@ PrefabInstance:
     - target: {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
       propertyPath: m_Name
       value: BasicEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
