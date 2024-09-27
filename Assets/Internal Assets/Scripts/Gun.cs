@@ -54,7 +54,6 @@ public class Gun : MonoBehaviour {
         }
     }
 
-    // To change later
     private void RotateGunAroundAnchor() {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _gunAnchor.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
