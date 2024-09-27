@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5688938357017808779}
   - component: {fileID: 2529419273994545502}
   - component: {fileID: 7934488519123690710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,3 +190,7 @@ MonoBehaviour:
   Animator: {fileID: 2529419273994545502}
   RetreatRange: 4
   BulletPrefab: {fileID: 1250557124098745510, guid: 6ad2cf0d2ab61d5408fd6475756189bf, type: 3}
+  _cooldown: 1
+  _middleBulletForce: 20
+  _sideBulletsForce: 20
+  _sideBulletsAngle: 30
