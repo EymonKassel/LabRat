@@ -9834,7 +9834,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
       propertyPath: _dashSpeed
-      value: 10
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
+      propertyPath: _dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
+      propertyPath: _dashDuration
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2787690726322849206, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
       propertyPath: m_IsActive
