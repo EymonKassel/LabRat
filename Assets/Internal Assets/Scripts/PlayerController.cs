@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public int CurrentHealth = 1;
@@ -33,12 +34,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Start() {
+        CurrentHealth = _maxHealth;
         _canDash = true;
     }
 
     private void Update() {
         HandleInputs();
         HandleAnimations();
+
+        if ( CurrentHealth <= 0 ) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         if ( _isDashing ) {
             return;
