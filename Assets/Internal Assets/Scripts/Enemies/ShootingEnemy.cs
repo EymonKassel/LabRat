@@ -15,8 +15,8 @@ public class ShootingEnemy : Enemy {
     protected Rigidbody2D BulletPrefabRB;
 
     protected bool IsAttacking;
-    protected IEnumerator AttackCoroutine;
     protected Vector3 Direction;
+    protected float lastShotTime = float.MinValue;
 
     protected override void Update() {
         base.Update();
@@ -25,11 +25,8 @@ public class ShootingEnemy : Enemy {
             Retreat();
         else if (DistanceFromPlayer < AttackRange)
         {
-            if (!IsAttacking)
-            {
-                AttackCoroutine = Attack();
-                StartCoroutine(AttackCoroutine);
-            }
+            if (Time.time - lastShotTime > _cooldown)
+                Shoot();
         }
         else
             Follow();
@@ -52,14 +49,10 @@ public class ShootingEnemy : Enemy {
         Gizmos.DrawWireSphere(transform.position, RetreatRange);
     }
 
-
-    protected virtual IEnumerator Attack()
+    protected virtual void Shoot()
     {
-        IsAttacking = true;
-
         GameObject bulletPrefab = Instantiate(BulletPrefab, transform.position, transform.rotation);
         bulletPrefab.GetComponent<Rigidbody2D>().AddForce(Direction * _bulletForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(_cooldown);
-        IsAttacking = false;
+        lastShotTime = Time.time;
     }
  }
