@@ -18,16 +18,16 @@ public class GameManager : Manager {
     [SerializeField]
     private EnemySpawner[] _enemySpawners;
     private void Start() {
-        _maxEnemiesInWave = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        UpdateWaveBar();
+        //_maxEnemiesInWave = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        //UpdateWaveBar();
     }
     private void FixedUpdate() {
-        _enemiesArray = GameObject.FindGameObjectsWithTag("Enemy");
-        //if ( _enemiesArray.Length <= 0 ) {
-        //    _enemySpawners[_currentWave++].enabled = true;
-        //}
+        //_enemiesArray = GameObject.FindGameObjectsWithTag("Enemy");
+        ////if ( _enemiesArray.Length <= 0 ) {
+        ////    _enemySpawners[_currentWave++].enabled = true;
+        ////}
         
-        UpdateWaveBar();
+        //UpdateWaveBar();
     }
 
     private void UpdateWaveBar() {
