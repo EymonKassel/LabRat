@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public int CurrentHealth = 1;
@@ -26,36 +28,43 @@ public class PlayerController : MonoBehaviour {
     private bool _isDashing;
     private bool _canDash;
     private Vector2 _directionToMouse;
-    private float _lastDashTime = float.MinValue;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start() {
+        CurrentHealth = _maxHealth;
+        _canDash = true;
     }
 
     private void Update() {
         HandleInputs();
         HandleAnimations();
 
-        if ( Input.GetMouseButtonDown(1) && _canDash ) {
-            _canDash = true;
+        if ( CurrentHealth <= 0 ) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-    }
-    private void FixedUpdate() {
-        
-        if ( _canDash  ) {
+
+        if ( _isDashing ) {
+            return;
+        }
+
+        if ( Input.GetMouseButtonDown(1) && _canDash ) {
             StartCoroutine(Dash());
         }
-        if ( !_isDashing ) {
-            Move();
-
+    }
+    
+    private void FixedUpdate() {
+        if ( _isDashing ) {
+            return;
         }
+        Move();
     }
     private void HandleInputs() {
         _position.x = Input.GetAxisRaw("Horizontal");
         _position.y = Input.GetAxisRaw("Vertical");
         _directionToMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        
-
     }
     private void Move() {
         // Make better later
@@ -63,12 +72,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator Dash() {
-        _isDashing = true;
-        _rb.velocity = _directionToMouse.normalized * _dashSpeed;
-        yield return new WaitForSeconds(_dashDuration);
-        _lastDashTime = Time.time;
-        _isDashing = false;
         _canDash = false;
+        _isDashing = true;
+        _dashTrailsPrefab.SetActive(true);
+        Vector2 _directionToMouseNormalized = _directionToMouse.normalized;
+        _rb.velocity = new Vector2(_directionToMouseNormalized.x * _dashSpeed, _directionToMouseNormalized.y * _dashSpeed);
+        yield return new WaitForSeconds(_dashDuration);
+        _isDashing = false;
+        _dashTrailsPrefab.SetActive(false);
+
+        yield return new WaitForSeconds(_dashCooldown);
+        _canDash = true;
     }
 
     private void HandleAnimations() {
