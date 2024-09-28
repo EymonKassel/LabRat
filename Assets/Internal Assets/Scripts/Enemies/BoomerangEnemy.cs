@@ -4,23 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoomerangEnemy : ShootingEnemy {
-    [SerializeField]
-    private float _cooldown = 1f;
-    protected override void Update() {
-        base.Update();
-
-        if ( DistanceFromPlayer < RetreatRange ) {
-            Retreat();
-        } else if ( DistanceFromPlayer < AttackRange ) {
-            if ( !IsAttacking ) {
-
-                AttackCoroutine = Attack();
-                StartCoroutine(AttackCoroutine);
-            }
-        } else {
-            Follow();
-        }
-    }
 
     protected virtual IEnumerator Attack() {
         IsAttacking = true;
