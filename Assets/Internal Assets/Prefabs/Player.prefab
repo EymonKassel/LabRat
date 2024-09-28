@@ -357,7 +357,7 @@ MonoBehaviour:
   _firePoint: {fileID: 7262259711617747567}
   _basicBulletPrefab: {fileID: 1250557124098745510, guid: 6ad2cf0d2ab61d5408fd6475756189bf, type: 3}
   _basicBulletForce: 40
-  _currentShootingType: 2
+  _currentShootingType: 0
   cooldown: 0.2
   defDistanceRay: 100
   m_lineRenderer: {fileID: 7590981290930051567}
