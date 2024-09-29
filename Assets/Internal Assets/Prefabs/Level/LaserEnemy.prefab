@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1649489854626338167}
   m_Layer: 8
   m_Name: LaserEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   AttackRange: 38.7
   Rb: {fileID: 8955763128678357711}
   Animator: {fileID: 2046007335664431020}
+  AudioManager: {fileID: 0}
   RetreatRange: 4
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _cooldown: 5

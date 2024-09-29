@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5898227428275563760}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSourse: {fileID: 8897480202079574387}
   _SFXSourse: {fileID: 1687993553981627488}
-  _temp: {fileID: 0}
+  BackgroundMusic: {fileID: 8300000, guid: fe0505420f7d9b943b7429f36219721c, type: 3}
+  PlayerBasicShoot: {fileID: 8300000, guid: 98b612e5f05d24529807228026c67d37, type: 3}
+  BasicShootDestroy: {fileID: 8300000, guid: 2aa42b757137445eea181c743c2cc9e4, type: 3}
+  PlayerDeath: {fileID: 8300000, guid: c6b596fd07a14a64b89285b6f079b167, type: 3}
+  PlayerDash: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  PlayerTakingDamage: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
+  EnemyMeleeAttack: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  EnemyRangedAttack: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  EnemyDeath: {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
+  EnemyBirth: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  EnemyBirthFromFloor: {fileID: 8300000, guid: ff5f85da24bc943d1abdc5760a22bc81, type: 3}
+  EnemyDash: {fileID: 8300000, guid: 89e6bc608da7b47d4914f3d9c2484e48, type: 3}
+  PressButton: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
 --- !u!1 &3426462831751834109
 GameObject:
   m_ObjectHideFlags: 0

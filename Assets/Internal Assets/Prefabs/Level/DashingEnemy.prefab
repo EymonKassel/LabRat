@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 9036630377795701192}
   m_Layer: 0
   m_Name: DashingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,3 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c10efa1aa61b6c48bcb2cee334682a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementSpeed: 5
+  MaxHealth: 1
+  _lineOfSite: 5
+  _attackRange: 1
+  AttackPower: 1

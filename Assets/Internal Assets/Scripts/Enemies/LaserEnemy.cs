@@ -27,7 +27,7 @@ public class LaserEnemy : ShootingEnemy
             Draw2DRay(transform.position, _hit.point);
             if(_hit.collider.gameObject.GetComponent<PlayerController>() != null)
             {
-                print("Задел крысу");
+                _hit.collider.gameObject.GetComponent<PlayerController>().TakeDamage();
             }
         }
         else

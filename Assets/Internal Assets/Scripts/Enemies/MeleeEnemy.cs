@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class MeleeEnemy : Enemy {
     private bool _isAttacking;
     private IEnumerator _attackCoroutine;
+    
 
     protected override void Update() {
         base.Update();
@@ -34,7 +35,8 @@ public class MeleeEnemy : Enemy {
     private IEnumerator Attack() {
         _isAttacking = true;
         Animator.SetBool("IsAttacking", true);
-        PlayerController.CurrentHealth--;
+        PlayerController.TakeDamage();
+        AudioManager.PlaySFX(AudioManager.EnemyMeleeAttack);
         yield return new WaitForSeconds(1);
         _isAttacking = false;
         Animator.SetBool("IsAttacking", false);
