@@ -469,17 +469,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 81977896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f3a9c3e33c2a3439dcd55b10a61829, type: 3}
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities:
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: 11.2, y: -4.49}
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: -17, y: 0}
-  _enemySpawnersManager: {fileID: 0}
+  _batches:
+  - EnemyType: 1
+    RadiousCenter: {x: 10, y: -5}
+    Radious: 2
+    enemyAmount: 2
+    spawnTime: 0
+  _waveManager: {fileID: 0}
   IsCleared: 0
   _enemiesLeft: 0
 --- !u!4 &81977898
@@ -6685,17 +6684,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1364564666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f3a9c3e33c2a3439dcd55b10a61829, type: 3}
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities:
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: 11.2, y: -4.49}
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: -17, y: 0}
-  _enemySpawnersManager: {fileID: 0}
+  _batches:
+  - EnemyType: 0
+    RadiousCenter: {x: 0, y: 0}
+    Radious: 0
+    enemyAmount: 1
+    spawnTime: 0
+  - EnemyType: 1
+    RadiousCenter: {x: 0, y: 0}
+    Radious: 0
+    enemyAmount: 1
+    spawnTime: 1
+  _waveManager: {fileID: 0}
   IsCleared: 0
   _enemiesLeft: 0
 --- !u!4 &1364564668
@@ -7335,17 +7338,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496152731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f3a9c3e33c2a3439dcd55b10a61829, type: 3}
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities:
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: 11.2, y: -4.49}
-  - Enemy: {fileID: 0}
-    EnemyType: 0
-    Position: {x: -17, y: 0}
-  _enemySpawnersManager: {fileID: 0}
+  _batches:
+  - EnemyType: 0
+    RadiousCenter: {x: 5, y: 5}
+    Radious: 0
+    enemyAmount: 1
+    spawnTime: 0
+  _waveManager: {fileID: 0}
   IsCleared: 0
   _enemiesLeft: 0
 --- !u!4 &1496152733
@@ -8896,20 +8898,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0571e37ab36984f9673e678d41344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MeleeEnemyPrefabs: []
-  CurrentMeleeEnemyLevel: 1
-  ShooterEnemyPrefabs: []
-  CurrentShooterEnemyLevel: 1
-  MoverEnemyPrefabs: []
-  CurrentMoverEnemyLevel: 1
-  TankEnemyPrefabs: []
-  CurrentTankEnemyLevel: 1
-  BufferEnemyPrefabs: []
-  CurrentBufferEnemyLevel: 1
-  _enemySpawners:
+  _waves:
   - {fileID: 81977896}
   - {fileID: 1496152731}
   - {fileID: 1364564666}
+  MeleeEnemyPrefabs:
+  - {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
+  MeleeEnemyLevel: 0
+  ShooterEnemyPrefabs:
+  - {fileID: 1677230416225933084, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
+  - {fileID: 5210265581581620132, guid: e9b708107d4c2a14b96752bd5024d5e3, type: 3}
+  - {fileID: 4488982292658417943, guid: 3302c52777f3c1d4c8954a9fe7f3dfad, type: 3}
+  ShooterEnemyLevel: 0
+  RunningEnemyPrefabs: []
+  RunningEnemyLevel: 0
+  TankEnemyPrefabs: []
+  TankEnemyLevel: 0
+  SupportEnemyPrefabs: []
+  SupportEnemyLevel: 0
   _currentWave: 0
 --- !u!4 &1837909087
 Transform:
@@ -10265,63 +10271,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0d01ef51d02008468792856ba2dc409, type: 3}
---- !u!1001 &2215867190539016220
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1677230416225933084, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_Name
-      value: ShootingEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.2564893
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703851789581129163, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
 --- !u!50 &3732084559034329197
 Rigidbody2D:
   serializedVersion: 4
@@ -10716,7 +10665,6 @@ SceneRoots:
   - {fileID: 1104454802}
   - {fileID: 226044956}
   - {fileID: 4976036113076642549}
-  - {fileID: 2215867190539016220}
   - {fileID: 8446687282049153603}
   - {fileID: 7472200159590839725}
   - {fileID: 1293567918}

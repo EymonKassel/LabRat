@@ -160,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 5210265581581620132}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3574f989cc37519408c47cf7951615d7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -191,6 +191,5 @@ MonoBehaviour:
   RetreatRange: 4
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _cooldown: 1
-  _middleBulletForce: 20
-  _sideBulletsForce: 20
+  _bulletForce: 20
   _sideBulletsAngle: 30

@@ -16,7 +16,7 @@ public class GameManager : Manager {
     [SerializeField]
     private int _currentWave = 0;
     [SerializeField]
-    private EnemySpawner[] _enemySpawners;
+    private Wave[] _enemySpawners;
     private void Start() {
         //_maxEnemiesInWave = GameObject.FindGameObjectsWithTag("Enemy").Length;
         //UpdateWaveBar();

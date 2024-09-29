@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour {
     }
     public void Death() {
         Destroy(gameObject);
+        FindAnyObjectByType<Wave>().SendMessage("EnemyDied");
     }
     private void GetDistanceFromPlayer() {
         DistanceFromPlayer = Vector2.Distance(PlayerPosition.position, transform.position);
