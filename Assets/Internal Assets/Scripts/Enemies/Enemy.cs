@@ -22,12 +22,17 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     protected Animator Animator;
 
+    public AudioManager AudioManager;
+
     private void Awake() {
+        AudioManager = FindObjectOfType<AudioManager>();
+        
         PlayerController = FindAnyObjectByType<PlayerController>();
         PlayerPosition = PlayerController.transform;
     }
     private void Start() {
         CurrentHealth = MaxHealth;
+        AudioManager.PlaySFX(AudioManager.EnemyBirth);
     }
     protected virtual void Update() {
         GetDistanceFromPlayer();

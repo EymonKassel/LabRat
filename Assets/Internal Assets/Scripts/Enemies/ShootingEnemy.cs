@@ -16,7 +16,7 @@ public class ShootingEnemy : Enemy {
 
     protected bool IsAttacking;
     protected Vector3 Direction;
-    protected float lastShotTime = float.MinValue;
+    protected float lastShotTime = 1f;
 
     protected override void Update() {
         base.Update();
@@ -53,6 +53,7 @@ public class ShootingEnemy : Enemy {
     {
         GameObject bulletPrefab = Instantiate(BulletPrefab, transform.position, transform.rotation);
         bulletPrefab.GetComponent<Rigidbody2D>().AddForce(Direction * _bulletForce, ForceMode2D.Impulse);
+        AudioManager.PlaySFX(AudioManager.EnemyRangedAttack);
         lastShotTime = Time.time;
     }
  }

@@ -28,9 +28,16 @@ public class PlayerController : MonoBehaviour {
     private bool _isDashing;
     private bool _canDash;
     private Vector2 _directionToMouse;
+    
+    private AudioManager _audioManager;
+
+    private IEnumerator _invulnerable;
+    [SerializeField] private bool _isInvulnerable;
+    [SerializeField] private float _invulnerableTimeDuration = 3f;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start() {
@@ -43,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         HandleAnimations();
 
         if ( CurrentHealth <= 0 ) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Death();
         }
 
         if ( _isDashing ) {
@@ -54,7 +61,27 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(Dash());
         }
     }
-    
+    private void Death() {
+        _audioManager.PlaySFX(_audioManager.PlayerDeath);
+        //todo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void TakeDamage() {
+        if ( !_isInvulnerable ) {
+            _audioManager.PlaySFX(_audioManager.PlayerTakingDamage);
+            CurrentHealth--;
+            _invulnerable = BeInvulnerable();
+            StartCoroutine(_invulnerable);
+        }
+    }
+
+    private IEnumerator BeInvulnerable() {
+        _isInvulnerable = true;
+        yield return new WaitForSeconds(_invulnerableTimeDuration);
+        _isInvulnerable = false;
+    }
+
     private void FixedUpdate() {
         if ( _isDashing ) {
             return;
@@ -72,11 +99,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator Dash() {
+        
         _canDash = false;
         _isDashing = true;
         _dashTrailsPrefab.SetActive(true);
         Vector2 _directionToMouseNormalized = _directionToMouse.normalized;
         _rb.velocity = new Vector2(_directionToMouseNormalized.x * _dashSpeed, _directionToMouseNormalized.y * _dashSpeed);
+        _audioManager.PlaySFX(_audioManager.PlayerDash);
         yield return new WaitForSeconds(_dashDuration);
         _isDashing = false;
         _dashTrailsPrefab.SetActive(false);
@@ -104,4 +133,5 @@ public class PlayerController : MonoBehaviour {
             _Rhand.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
         }
     }
+    
 }

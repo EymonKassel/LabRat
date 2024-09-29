@@ -8,7 +8,8 @@ public class Wave : MonoBehaviour {
     [SerializeField] private WaveManager _waveManager;
 
     public bool IsCleared = false;
-    [SerializeField] private int _enemiesLeft;
+    public int _enemiesLeft;
+    public int MaxEnemyAmount;
     private void Awake() {
         _waveManager = FindObjectOfType<WaveManager>();
     }
@@ -17,6 +18,7 @@ public class Wave : MonoBehaviour {
         foreach (EnemyBatch batch in _batches)
         {
             _enemiesLeft += batch.enemyAmount;
+            MaxEnemyAmount = _enemiesLeft;
             StartCoroutine(SpawnEnemies(batch));
         }
     }

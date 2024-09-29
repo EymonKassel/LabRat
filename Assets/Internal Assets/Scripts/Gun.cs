@@ -15,10 +15,9 @@ public class Gun : MonoBehaviour {
     private ShootingType _currentShootingType;
 
     [SerializeField] float cooldown = 0.5f;
-
-    AudioManager _audioManager;
     float lastShotTime = float.MinValue;
 
+    AudioManager _audioManager;
 
     [SerializeField] private float defDistanceRay = 100;
     public LineRenderer m_lineRenderer;
@@ -47,7 +46,7 @@ public class Gun : MonoBehaviour {
                 GameObject basicBullet = Instantiate(_basicBulletPrefab, _firePoint.position, _firePoint.rotation);
                 Rigidbody2D basicBulletRB = basicBullet.GetComponentInChildren<Rigidbody2D>();
                 basicBulletRB.AddForce(_firePoint.right * _basicBulletForce, ForceMode2D.Impulse);
-                _audioManager.PlaySFX(_audioManager.PlayerShoot);
+                _audioManager.PlaySFX(_audioManager.PlayerBasicShoot);
                 lastShotTime = Time.time;
                 break;
             case ShootingType.Ricochet:

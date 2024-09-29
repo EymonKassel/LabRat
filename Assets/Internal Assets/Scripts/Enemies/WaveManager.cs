@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _waves;
+    public GameObject[] _waves;
     [Header("Melee Enemy")]
     public GameObject[] MeleeEnemyPrefabs;
     [Range(0, 2)] public int MeleeEnemyLevel = 1;
@@ -25,19 +25,25 @@ public class WaveManager : MonoBehaviour
     public GameObject[] SupportEnemyPrefabs;
     [Range(0, 2)] public int SupportEnemyLevel = 1;
 
-    [SerializeField] private int _currentWave = 0;
+    public int CurrentWave = 0;
 
+    private GameManager _gameManager;
+
+    private void Awake() {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
     private void OnEnable() {
         Debug.Log(_waves[0]);
         _waves[0].SetActive(true);
     }
 
     private void Update() {
-        if (_waves[_currentWave].GetComponent<Wave>().IsCleared ) {
-            _waves[_currentWave].SetActive(false);
-            _currentWave = (_currentWave + 1) % _waves.Length;
-            _waves[_currentWave].SetActive(true);
-            _waves[_currentWave].GetComponent<Wave>().IsCleared = false;
+        if (_waves[CurrentWave].GetComponent<Wave>().IsCleared ) {
+            _waves[CurrentWave].SetActive(false);
+            CurrentWave = (CurrentWave + 1) % _waves.Length;
+            _waves[CurrentWave].SetActive(true);
+            _waves[CurrentWave].GetComponent<Wave>().IsCleared = false;
+            _gameManager.ShowLevelUpPanel();
         }
     }
 }

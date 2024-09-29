@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7934488519123690710}
   m_Layer: 8
   m_Name: ShotgunEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   AttackRange: 12
   Rb: {fileID: 5688938357017808779}
   Animator: {fileID: 2529419273994545502}
+  AudioManager: {fileID: 0}
   RetreatRange: 4
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _cooldown: 1
