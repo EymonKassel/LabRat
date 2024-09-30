@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000001d9d79c17bc66542
+  m_ApplyToSortingLayers: 000000001d9d79c17bc6654285470168
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -10039,7 +10039,7 @@ MonoBehaviour:
   RetreatRange: 4
   _cooldown: 1
   Rb: {fileID: 3732084559034329197}
-  Animator: {fileID: 6783090662635638456}
+  Animator: {fileID: 0}
   AudioManager: {fileID: 0}
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _bulletForce: 20
@@ -10135,11 +10135,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8446687282049153603}
+  - component: {fileID: 4113890037516738047}
   - component: {fileID: 4113890037516738046}
-  - component: {fileID: 8747888157708285907}
   - component: {fileID: 3732084559034329197}
-  - component: {fileID: 6783090662635638456}
   - component: {fileID: 1379468375072850736}
   m_Layer: 8
   m_Name: ShootingEnemy (1)
@@ -10200,6 +10198,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &4113890037516738047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852469501288248386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4976036113076642549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10285,6 +10298,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 4113890037516738047}
   - {fileID: 459865916}
   - {fileID: 619394802}
   - {fileID: 2052439565}
@@ -10297,3 +10311,4 @@ SceneRoots:
   - {fileID: 81977898}
   - {fileID: 1496152733}
   - {fileID: 1364564668}
+  - {fileID: 1799617310803254966}
