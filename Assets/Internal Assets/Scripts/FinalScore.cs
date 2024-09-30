@@ -25,7 +25,7 @@ public class FinalScore : MonoBehaviour {
         _dashes.text = "Dashes done: " + _scoreCounter.DashCounter;
     }
     private void Update() {
-        if (Input.anyKeyDown) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             SceneManager.LoadScene(0);
         }
     }
