@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalScore : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _waves;
@@ -21,5 +23,10 @@ public class FinalScore : MonoBehaviour {
         _waves.text = "Waves completed: " + _scoreCounter.WaveCounter;
         _shots.text = "Shots taken: " + _scoreCounter.ShotCounter;
         _dashes.text = "Dashes done: " + _scoreCounter.DashCounter;
+    }
+    private void Update() {
+        if (Input.anyKeyDown) {
+            SceneManager.LoadScene(0);
+        }
     }
 }
