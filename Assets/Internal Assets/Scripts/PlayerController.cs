@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-    public int CurrentHealth = 1;
+    public int CurrentHealth = 3;
     [SerializeField]
     private int _maxHealth = 1;
     [SerializeField]
@@ -35,9 +35,13 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private bool _isInvulnerable;
     [SerializeField] private float _invulnerableTimeDuration = 3f;
 
+    public int TakenDamage;
+    private GameManager _gameManager;
+
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>();
         _audioManager = FindObjectOfType<AudioManager>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Start() {
@@ -64,13 +68,14 @@ public class PlayerController : MonoBehaviour {
     private void Death() {
         _audioManager.PlaySFX(_audioManager.PlayerDeath);
         //todo
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _gameManager.LoadNextScene();
     }
 
     public void TakeDamage() {
         if ( !_isInvulnerable ) {
             _audioManager.PlaySFX(_audioManager.PlayerTakingDamage);
             CurrentHealth--;
+            TakenDamage++;
             _invulnerable = BeInvulnerable();
             StartCoroutine(_invulnerable);
         }

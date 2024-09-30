@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : Manager {
@@ -17,6 +18,9 @@ public class GameManager : Manager {
 
     [SerializeField] private GameObject _levelUpPanel;
 
+    [SerializeField] private GameObject[] _healthImages;
+
+
     private void Awake() {
         _waveManager = FindObjectOfType<WaveManager>();
         _playerController = FindObjectOfType<PlayerController>();
@@ -24,10 +28,28 @@ public class GameManager : Manager {
     }
     private void Start() {
         UpdateWaveBar();
+        UpdateHealthBar();
     }
     private void Update() {
         UpdateWaveBar();
+        UpdateHealthBar();
 
+    }
+
+    public void LoadNextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void SwitcherForSound(GameObject gameObject) {
+        if ( gameObject.activeInHierarchy ) {
+            gameObject.SetActive(false);
+        } else {
+            gameObject.SetActive(true);
+        }
+    }
+    private void UpdateHealthBar() {
+        for ( int i = 0; i < _playerController.TakenDamage; i++ ) {
+            _healthImages[i].SetActive(false);
+        }
     }
     private void UpdateWaveBar() {
         float _scaleFactor = (float)_waveManager._waves[_waveManager.CurrentWave].GetComponent<Wave>()._enemiesLeft 

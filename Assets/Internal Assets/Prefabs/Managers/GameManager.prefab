@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643997955835222707}
   - component: {fileID: 5447502758741181175}
+  - component: {fileID: 8412043508057370913}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -42,5 +43,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80712ef8ab4f775458b9c486d90b2e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waveBar: {fileID: 0}
+  _maxEnemyLevel: 2
+  _levelUpPanel: {fileID: 0}
+  _healthImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &8412043508057370913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386046750028246647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a5a48169f8ea42b524347c86dafb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
