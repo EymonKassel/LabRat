@@ -8,6 +8,6 @@ public class MeleeEnemy : Enemy {
     protected override void Attack() 
     {
         PlayerController.TakeDamage();
-        AudioManager.PlaySFX(AudioManager.EnemyMeleeAttack);
+        //AudioManager.PlaySFX(AudioManager.EnemyMeleeAttack);
     }
 }
