@@ -15,11 +15,11 @@ public class LaserEnemy : ShootingEnemy
 
     protected override void GetDirectionToPlayer()
     {
-        Direction = Quaternion.Euler(0, 0, radian) * (PlayerPosition.position - transform.position).normalized;
+        Direction = Quaternion.Euler(0, 0, radian) * Vector2.right;
         radian += Time.deltaTime * rotationSpeed;
     }
 
-    protected override void Shoot()    {
+    protected override void Attack()    {
         
         RaycastHit2D _hit = Physics2D.Raycast(transform.position, Direction, Mathf.Infinity, ~lineIgnoreLayer);
         if (_hit)
@@ -32,21 +32,17 @@ public class LaserEnemy : ShootingEnemy
         }
         else
             Draw2DRay(transform.position, transform.transform.right * defDistanceRay);
+
         if(timer < duration)
             timer += Time.deltaTime;
         else
         {
             timer = 0;
-            lastShotTime = Time.time;
+            lastAttackTime = Time.time;
             Draw2DRay(transform.position, transform.position);
         }
     }
 
-    protected override void Follow()
-    {
-        base.Follow();
-        Draw2DRay(transform.position, transform.position);
-    }
 
     private void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {

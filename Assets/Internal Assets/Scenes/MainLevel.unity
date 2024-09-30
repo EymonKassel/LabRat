@@ -11263,12 +11263,12 @@ MonoBehaviour:
   MaxHealth: 3
   MovementSpeed: 5
   AttackRange: 12
+  RetreatRange: 4
+  _cooldown: 1
   Rb: {fileID: 3732084559034329197}
   Animator: {fileID: 6783090662635638456}
   AudioManager: {fileID: 0}
-  RetreatRange: 4
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
-  _cooldown: 1
   _bulletForce: 20
 --- !u!1001 &1799617310803254966
 PrefabInstance:
