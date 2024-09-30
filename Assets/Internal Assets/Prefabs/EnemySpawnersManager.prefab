@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7091573994182594611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5803438692408215381}
+  - component: {fileID: 1748121404236562260}
+  m_Layer: 0
+  m_Name: EnemySpawnersManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5803438692408215381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091573994182594611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748121404236562260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091573994182594611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0571e37ab36984f9673e678d41344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveCounter: 0
+  _waves:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MeleeEnemyPrefabs:
+  - {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
+  - {fileID: 2561585696039195416, guid: e8b2b8c3d3b4597479eb4f4082673848, type: 3}
+  - {fileID: 2561585696039195416, guid: 9ddb01db375a87c48b4dfcc43b4c4569, type: 3}
+  MeleeEnemyLevel: 0
+  ShooterEnemyPrefabs:
+  - {fileID: 1677230416225933084, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
+  - {fileID: 5210265581581620132, guid: e9b708107d4c2a14b96752bd5024d5e3, type: 3}
+  - {fileID: 4488982292658417943, guid: 3302c52777f3c1d4c8954a9fe7f3dfad, type: 3}
+  ShooterEnemyLevel: 0
+  RunningEnemyPrefabs:
+  - {fileID: 2561585696039195416, guid: d1e5a687fe328c74981fc094c1f676d7, type: 3}
+  - {fileID: 5210265581581620132, guid: ed78b4331b9f9df4ea5ed107a606b73d, type: 3}
+  - {fileID: 5705565466374246874, guid: 734d29c65efcfbd4489d5303c2062b7e, type: 3}
+  RunningEnemyLevel: 0
+  TankEnemyPrefabs: []
+  TankEnemyLevel: 0
+  SupportEnemyPrefabs: []
+  SupportEnemyLevel: 0
+  CurrentWave: 0
+  PickedUpgrade: 0

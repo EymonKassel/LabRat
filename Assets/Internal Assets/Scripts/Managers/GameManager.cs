@@ -9,6 +9,7 @@ public class GameManager : Manager {
     [SerializeField] private Image _waveBar;
     private WaveManager _waveManager;
     public int _waveCapacity;
+    public Transform[] _teleportPoints;
     private float _scaleFactor;
 
     private PlayerController _playerController;
@@ -101,6 +102,7 @@ public class GameManager : Manager {
     public void ShowLevelUpPanel() {
         _levelUpPanel.SetActive(true);
         _playerController.enabled = false;
+        _playerController._rb.velocity = Vector2.zero;
         _gun.enabled = false;
     }
 }

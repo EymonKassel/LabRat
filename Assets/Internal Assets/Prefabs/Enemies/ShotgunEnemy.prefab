@@ -261,10 +261,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576607252774608293}
+  - component: {fileID: 7934488519123690710}
   - component: {fileID: 314849033185022005}
   - component: {fileID: 5688938357017808779}
   - component: {fileID: 2529419273994545502}
-  - component: {fileID: 7934488519123690710}
   m_Layer: 8
   m_Name: ShotgunEnemy
   m_TagString: Enemy
@@ -285,6 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7148806703317094859}
   - {fileID: 4673399946281003582}
   - {fileID: 45693571369845973}
   - {fileID: 4025946772450747422}
@@ -292,6 +293,31 @@ Transform:
   - {fileID: 5959658643912640430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7934488519123690710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210265581581620132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c424d51d2985348b796b4afa1ccdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  MovementSpeed: 5
+  AttackRange: 12
+  RetreatRange: 4
+  _cooldown: 1
+  lastAttackTime: 1
+  Rb: {fileID: 5688938357017808779}
+  Animator: {fileID: 2529419273994545502}
+  AudioManager: {fileID: 0}
+  BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
+  _bulletForce: 20
+  _firePoint: {fileID: 7148806703317094859}
+  _sideBulletsAngle: 30
 --- !u!70 &314849033185022005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -364,7 +390,7 @@ Animator:
   m_GameObject: {fileID: 5210265581581620132}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3574f989cc37519408c47cf7951615d7, type: 2}
+  m_Controller: {fileID: 22100000, guid: fb8a04a4855c71d4aac7287d53e15429, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -375,29 +401,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7934488519123690710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5210265581581620132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c424d51d2985348b796b4afa1ccdfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 3
-  MovementSpeed: 5
-  AttackRange: 12
-  RetreatRange: 4
-  _cooldown: 1
-  Rb: {fileID: 5688938357017808779}
-  Animator: {fileID: 2529419273994545502}
-  AudioManager: {fileID: 0}
-  BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
-  _bulletForce: 20
-  _sideBulletsAngle: 30
 --- !u!1 &6059757594283832996
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +485,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6197031085543976528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7148806703317094859}
+  m_Layer: 8
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7148806703317094859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197031085543976528}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 576607252774608293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8521955587080784410
 GameObject:
   m_ObjectHideFlags: 0

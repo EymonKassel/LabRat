@@ -21,7 +21,7 @@ public class LaserEnemy : ShootingEnemy
 
     protected override void Attack()    {
         
-        RaycastHit2D _hit = Physics2D.Raycast(transform.position, Direction, Mathf.Infinity, ~lineIgnoreLayer);
+        RaycastHit2D _hit = Physics2D.Raycast(_firePoint.position, Direction, Mathf.Infinity, ~lineIgnoreLayer);
         if (_hit)
         {
             Draw2DRay(transform.position, _hit.point);

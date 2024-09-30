@@ -8,13 +8,14 @@ public class ShootingEnemy : Enemy {
     protected GameObject BulletPrefab;
     [SerializeField]
     protected float _bulletForce = 20f;
+    [SerializeField]
+    protected Transform _firePoint;
     protected Rigidbody2D BulletPrefabRB;
-
-    protected bool IsAttacking;
 
     protected override void Attack()
     {
-        GameObject bulletPrefab = Instantiate(BulletPrefab, transform.position, transform.rotation);
+        Animator.SetTrigger("IsAttacking");
+        GameObject bulletPrefab = Instantiate(BulletPrefab, _firePoint.position, _firePoint.rotation);
         bulletPrefab.GetComponent<Rigidbody2D>().AddForce(Direction * _bulletForce, ForceMode2D.Impulse);
         AudioManager.PlaySFX(AudioManager.EnemyRangedAttack);
         lastAttackTime = Time.time;
