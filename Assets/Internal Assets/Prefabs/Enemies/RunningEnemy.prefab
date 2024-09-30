@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1760663214935800474}
   - component: {fileID: 7570288842429435946}
   m_Layer: 8
-  m_Name: Body
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3573991604390387829}
   m_Father: {fileID: 2509014651998379196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7570288842429435946
@@ -95,8 +96,8 @@ GameObject:
   - component: {fileID: 2509014651998379196}
   - component: {fileID: 9036630377795701192}
   - component: {fileID: 7170332177044174210}
-  - component: {fileID: 8677440026768584755}
   - component: {fileID: 2233019491530691894}
+  - component: {fileID: 4016061718890275167}
   m_Layer: 8
   m_Name: RunningEnemy
   m_TagString: Enemy
@@ -117,7 +118,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3573991604390387829}
   - {fileID: 1760663214935800474}
   - {fileID: 6772289805024780068}
   m_Father: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
   AttackRange: 1
   RetreatRange: 2
   _cooldown: 1
+  lastAttackTime: 1
   Rb: {fileID: 7170332177044174210}
   Animator: {fileID: 2233019491530691894}
   AudioManager: {fileID: 0}
@@ -169,8 +170,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8677440026768584755
-CircleCollider2D:
+--- !u!95 &2233019491530691894
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561585696039195416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: b9dd61e3d3f9053479161dd597a617ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &4016061718890275167
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,29 +224,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.02
---- !u!95 &2233019491530691894
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2561585696039195416}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3574f989cc37519408c47cf7951615d7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Size: {x: 2.06, y: 1.52}
+  m_Direction: 0
 --- !u!1 &7608789854012753802
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,11 +336,11 @@ Transform:
   m_GameObject: {fileID: 8263343160198784350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.021, y: -0.095, z: 0}
+  m_LocalPosition: {x: 0, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2509014651998379196}
+  m_Father: {fileID: 1760663214935800474}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3533588755640070314
 SpriteRenderer:

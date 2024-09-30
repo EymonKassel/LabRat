@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1273399902636592783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637063619420503604}
+  m_Layer: 8
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637063619420503604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273399902636592783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9159855212635418523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2883194887373438790
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,10 +292,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9159855212635418523}
+  - component: {fileID: 6086836281239473531}
   - component: {fileID: 5988878079899775277}
   - component: {fileID: 8955763128678357711}
   - component: {fileID: 2046007335664431020}
-  - component: {fileID: 6086836281239473531}
   - component: {fileID: 1649489854626338167}
   m_Layer: 8
   m_Name: LaserEnemy
@@ -286,6 +317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 637063619420503604}
   - {fileID: 9143036006699372567}
   - {fileID: 142985687516214507}
   - {fileID: 3053109939507455552}
@@ -293,6 +325,37 @@ Transform:
   - {fileID: 4235739074294420931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6086836281239473531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488982292658417943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a0b569b299f674ebd9989f52ac53a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 5
+  MovementSpeed: 5
+  AttackRange: 38.7
+  RetreatRange: 4
+  _cooldown: 5
+  lastAttackTime: 1
+  Rb: {fileID: 8955763128678357711}
+  Animator: {fileID: 2046007335664431020}
+  AudioManager: {fileID: 0}
+  BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
+  _bulletForce: 20
+  _firePoint: {fileID: 0}
+  defDistanceRay: 100
+  duration: 5
+  rotationSpeed: 20
+  lineRenderer: {fileID: 1649489854626338167}
+  lineIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 3328
 --- !u!70 &5988878079899775277
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -365,7 +428,7 @@ Animator:
   m_GameObject: {fileID: 4488982292658417943}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3574f989cc37519408c47cf7951615d7, type: 2}
+  m_Controller: {fileID: 22100000, guid: fb8a04a4855c71d4aac7287d53e15429, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -376,35 +439,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6086836281239473531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4488982292658417943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74a0b569b299f674ebd9989f52ac53a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 5
-  MovementSpeed: 5
-  AttackRange: 38.7
-  RetreatRange: 4
-  _cooldown: 5
-  Rb: {fileID: 8955763128678357711}
-  Animator: {fileID: 2046007335664431020}
-  AudioManager: {fileID: 0}
-  BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
-  _bulletForce: 20
-  defDistanceRay: 100
-  duration: 5
-  rotationSpeed: 20
-  lineRenderer: {fileID: 1649489854626338167}
-  lineIgnoreLayer:
-    serializedVersion: 2
-    m_Bits: 3328
 --- !u!120 &1649489854626338167
 LineRenderer:
   serializedVersion: 2

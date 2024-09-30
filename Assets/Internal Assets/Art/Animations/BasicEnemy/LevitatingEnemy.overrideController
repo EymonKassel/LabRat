@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LevitatingEnemy
+  m_Controller: {fileID: 9100000, guid: 3574f989cc37519408c47cf7951615d7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 44782843106fb6342b735dcde63cd7fc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ad12f1478c9daae4f828cbc7d3f334b2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 083541bafc427b248b9f1cb25c119051, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 68f2b1a0637724d4ea36abf3b2df5059, type: 2}

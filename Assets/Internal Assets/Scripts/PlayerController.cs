@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     bool _flipped = false;
 
     private Vector2 _position;
-    private Rigidbody2D _rb;
+    public Rigidbody2D _rb;
 
     [SerializeField] private GameObject _dashTrailsPrefab;
     [SerializeField] private float _dashSpeed = 100f;
