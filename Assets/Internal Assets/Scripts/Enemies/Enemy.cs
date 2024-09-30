@@ -31,6 +31,16 @@ public class Enemy : MonoBehaviour {
 
     public AudioManager AudioManager;
 
+    private float _timeToBorn = 1f;
+    private IEnumerator _beBorn;
+    private bool _isBorn;
+
+    private IEnumerator BeBorn() {
+        yield return new WaitForSeconds(_timeToBorn);
+        _isBorn = true;
+    }
+
+
     protected virtual void OnEnable() {
         AudioManager = FindObjectOfType<AudioManager>();        
         PlayerController = FindAnyObjectByType<PlayerController>();
@@ -39,9 +49,16 @@ public class Enemy : MonoBehaviour {
         AudioManager.PlaySFX(AudioManager.EnemyBirth);
         isAlive = true;
     }
+    private void Start() {
+        _beBorn = BeBorn();
+        StartCoroutine(_beBorn);
+    }
 
     private void Update() 
     {
+        if ( !_isBorn ) {
+            return;
+        }
         if ( CurrentHealth <= 0 ) {
             isAlive = false;
             Animator.SetBool("IsDead", true);
@@ -50,7 +67,10 @@ public class Enemy : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(isAlive)
+        if ( !_isBorn ) {
+            return;
+        }
+        if (isAlive)
             Movement();
     }
 
