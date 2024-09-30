@@ -444,20 +444,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _batches:
   - EnemyType: 1
-    RadiousCenter: {x: 10, y: -5}
-    Radious: 6.9
+    RadiousCenter: {x: 11.26, y: -5.7}
+    Radious: 4
     enemyAmount: 2
-    spawnTime: 1
+    spawnTime: 4
   - EnemyType: 0
-    RadiousCenter: {x: -7.3, y: -1.04}
-    Radious: 6.1
+    RadiousCenter: {x: -11.06, y: -7.06}
+    Radious: 3
     enemyAmount: 2
-    spawnTime: 2
+    spawnTime: 6
   - EnemyType: 1
-    RadiousCenter: {x: 0.11, y: -1.62}
-    Radious: 6.1
-    enemyAmount: 5
-    spawnTime: 3
+    RadiousCenter: {x: -6.18, y: 0.14}
+    Radious: 3
+    enemyAmount: 1
+    spawnTime: 7
   _waveManager: {fileID: 0}
   IsCleared: 0
   _enemiesLeft: 0
@@ -905,6 +905,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &231980531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231980533}
+  - component: {fileID: 231980532}
+  m_Layer: 0
+  m_Name: EnemySpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &231980532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231980531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _batches:
+  - EnemyType: 1
+    RadiousCenter: {x: -8.99, y: 0}
+    Radious: 6
+    enemyAmount: 3
+    spawnTime: 0
+  - EnemyType: 0
+    RadiousCenter: {x: 9.38, y: -3.96}
+    Radious: 6
+    enemyAmount: 3
+    spawnTime: 1
+  - EnemyType: 1
+    RadiousCenter: {x: 0, y: 0}
+    Radious: 6
+    enemyAmount: 3
+    spawnTime: 1
+  _waveManager: {fileID: 0}
+  IsCleared: 0
+  _enemiesLeft: 0
+  MaxEnemyAmount: 0
+--- !u!4 &231980533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231980531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288174054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2020,75 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &557009048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557009050}
+  - component: {fileID: 557009049}
+  m_Layer: 0
+  m_Name: EnemySpawner (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 0
+--- !u!114 &557009049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557009048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _batches:
+  - EnemyType: 0
+    RadiousCenter: {x: -10.25, y: 0}
+    Radious: 4
+    enemyAmount: 2
+    spawnTime: 2
+  - EnemyType: 0
+    RadiousCenter: {x: 10.18, y: -4.88}
+    Radious: 4
+    enemyAmount: 2
+    spawnTime: 2
+  - EnemyType: 0
+    RadiousCenter: {x: -7.89, y: -5.43}
+    Radious: 4
+    enemyAmount: 2
+    spawnTime: 4
+  - EnemyType: 0
+    RadiousCenter: {x: 10.42, y: 2.12}
+    Radious: 4
+    enemyAmount: 2
+    spawnTime: 4
+  _waveManager: {fileID: 0}
+  IsCleared: 0
+  _enemiesLeft: 0
+  MaxEnemyAmount: 0
+--- !u!4 &557009050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557009048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572438998
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6268,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1183069217
+--- !u!1 &1172257528
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6143,28 +6276,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1183069218}
+  - component: {fileID: 1172257530}
+  - component: {fileID: 1172257529}
   m_Layer: 0
-  m_Name: TeleportPoint
+  m_Name: EnemySpawner (4)
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1183069218
+  m_IsActive: 0
+--- !u!114 &1172257529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172257528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _batches:
+  - EnemyType: 1
+    RadiousCenter: {x: -9.25, y: 0}
+    Radious: 6
+    enemyAmount: 3
+    spawnTime: 3
+  - EnemyType: 0
+    RadiousCenter: {x: 10.1, y: 0}
+    Radious: 6
+    enemyAmount: 3
+    spawnTime: 6
+  _waveManager: {fileID: 0}
+  IsCleared: 0
+  _enemiesLeft: 0
+  MaxEnemyAmount: 0
+--- !u!4 &1172257530
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183069217}
+  m_GameObject: {fileID: 1172257528}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.86, y: -6.72, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1490746776}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1198330715
 GameObject:
@@ -6647,10 +6808,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _batches:
   - EnemyType: 2
-    RadiousCenter: {x: 9.48, y: 0}
-    Radious: 2.43
-    enemyAmount: 1
-    spawnTime: 0
+    RadiousCenter: {x: -11.53, y: 0}
+    Radious: 5
+    enemyAmount: 2
+    spawnTime: 2
+  - EnemyType: 2
+    RadiousCenter: {x: 10.69, y: 0}
+    Radious: 5
+    enemyAmount: 2
+    spawnTime: 7
   _waveManager: {fileID: 0}
   IsCleared: 0
   _enemiesLeft: 0
@@ -6937,6 +7103,70 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 389934b0af51c734988387bb341cca42, type: 3}
+--- !u!1 &1382547798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382547800}
+  - component: {fileID: 1382547799}
+  m_Layer: 0
+  m_Name: EnemySpawner (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1382547799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382547798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf35ecc8b2c681b449e7374185a96522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _batches:
+  - EnemyType: 2
+    RadiousCenter: {x: 8.52, y: 1.74}
+    Radious: 3
+    enemyAmount: 2
+    spawnTime: 0
+  - EnemyType: 1
+    RadiousCenter: {x: 12.42, y: -6.36}
+    Radious: 3
+    enemyAmount: 2
+    spawnTime: 1
+  - EnemyType: 2
+    RadiousCenter: {x: -10.5, y: -6.36}
+    Radious: 3
+    enemyAmount: 1
+    spawnTime: 1
+  _waveManager: {fileID: 0}
+  IsCleared: 0
+  _enemiesLeft: 0
+  MaxEnemyAmount: 0
+--- !u!4 &1382547800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382547798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413147790
 GameObject:
   m_ObjectHideFlags: 0
@@ -7395,9 +7625,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _batches:
   - EnemyType: 0
-    RadiousCenter: {x: 5, y: 5}
-    Radious: 0
-    enemyAmount: 1
+    RadiousCenter: {x: 10.4, y: -5.11}
+    Radious: 5
+    enemyAmount: 3
+    spawnTime: 0
+  - EnemyType: 2
+    RadiousCenter: {x: -8.99, y: -4.02}
+    Radious: 5
+    enemyAmount: 2
     spawnTime: 0
   _waveManager: {fileID: 0}
   IsCleared: 0
@@ -8978,6 +9213,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!1 &1837909085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837909087}
+  - component: {fileID: 1837909086}
+  m_Layer: 0
+  m_Name: EnemySpawnersManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1837909086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837909085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0571e37ab36984f9673e678d41344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveCounter: 0
+  _waves:
+  - {fileID: 81977896}
+  - {fileID: 1496152731}
+  - {fileID: 1364564666}
+  - {fileID: 231980531}
+  - {fileID: 1172257528}
+  - {fileID: 1382547798}
+  - {fileID: 557009048}
+  MeleeEnemyPrefabs:
+  - {fileID: 4850369632310958399, guid: ba159f47e93b13a4cb080a6398d87d5b, type: 3}
+  - {fileID: 2561585696039195416, guid: e8b2b8c3d3b4597479eb4f4082673848, type: 3}
+  MeleeEnemyLevel: 0
+  ShooterEnemyPrefabs:
+  - {fileID: 1677230416225933084, guid: 48bf16da5c54bf7448087a44f7c64d42, type: 3}
+  - {fileID: 5210265581581620132, guid: e9b708107d4c2a14b96752bd5024d5e3, type: 3}
+  - {fileID: 4488982292658417943, guid: 3302c52777f3c1d4c8954a9fe7f3dfad, type: 3}
+  ShooterEnemyLevel: 0
+  RunningEnemyPrefabs:
+  - {fileID: 2561585696039195416, guid: d1e5a687fe328c74981fc094c1f676d7, type: 3}
+  RunningEnemyLevel: 0
+  TankEnemyPrefabs: []
+  TankEnemyLevel: 0
+  SupportEnemyPrefabs: []
+  SupportEnemyLevel: 0
+  CurrentWave: 0
+  PickedUpgrade: 0
+--- !u!4 &1837909087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837909085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858838702
 GameObject:
   m_ObjectHideFlags: 0
@@ -10418,6 +10724,7 @@ MonoBehaviour:
   Rb: {fileID: 3732084559034329197}
   Animator: {fileID: 0}
   AudioManager: {fileID: 0}
+  _timeToBorn: 0
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _bulletForce: 20
   _firePoint: {fileID: 0}
@@ -10625,7 +10932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
       propertyPath: _dashDuration
-      value: 0.15
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
+      propertyPath: _isInvulnerable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2159186501346873575, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
       propertyPath: _invulnerableTimeDuration
@@ -10678,6 +10989,10 @@ PrefabInstance:
     - target: {fileID: 5704898738801404279, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620148353758308895, guid: 95fac2c2c930c7f40829f8fd133988bd, type: 3}
+      propertyPath: cooldown
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10758,6 +11073,10 @@ SceneRoots:
   - {fileID: 81977898}
   - {fileID: 1496152733}
   - {fileID: 1364564668}
+  - {fileID: 231980533}
+  - {fileID: 1172257530}
+  - {fileID: 1382547800}
+  - {fileID: 557009050}
   - {fileID: 1370242849}
   - {fileID: 394347186}
   - {fileID: 7299230921170895685}
