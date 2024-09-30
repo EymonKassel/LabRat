@@ -20,13 +20,17 @@ public class GameManager : Manager {
 
     [SerializeField] private GameObject[] _healthImages;
 
+    
+
 
     private void Awake() {
+        
+        
+    }
+    private void Start() {
         _waveManager = FindObjectOfType<WaveManager>();
         _playerController = FindObjectOfType<PlayerController>();
         _gun = FindObjectOfType<Gun>();
-    }
-    private void Start() {
         UpdateWaveBar();
         UpdateHealthBar();
     }

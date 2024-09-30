@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 public class Gun : MonoBehaviour {
+    public int  BulletCounter;
     [SerializeField]
     private Transform _gunAnchor;
     [SerializeField]
@@ -47,6 +48,7 @@ public class Gun : MonoBehaviour {
                 Rigidbody2D basicBulletRB = basicBullet.GetComponentInChildren<Rigidbody2D>();
                 basicBulletRB.AddForce(_firePoint.right * _basicBulletForce, ForceMode2D.Impulse);
                 _audioManager.PlaySFX(_audioManager.PlayerBasicShoot);
+                BulletCounter++;
                 lastShotTime = Time.time;
                 break;
             case ShootingType.Ricochet:
