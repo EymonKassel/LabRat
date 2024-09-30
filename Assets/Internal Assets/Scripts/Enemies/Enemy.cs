@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     protected float _cooldown = 1f;
     protected float DistanceFromPlayer;
-    protected Vector3 Direction;
+    protected Vector3 Direction = Vector3.right;
     protected float lastAttackTime = 1f;
     protected bool isAlive;
 
@@ -31,9 +31,8 @@ public class Enemy : MonoBehaviour {
 
     public AudioManager AudioManager;
 
-    private void OnEnable() {
-        AudioManager = FindObjectOfType<AudioManager>();
-        
+    protected virtual void OnEnable() {
+        AudioManager = FindObjectOfType<AudioManager>();        
         PlayerController = FindAnyObjectByType<PlayerController>();
         PlayerPosition = PlayerController.transform;
         CurrentHealth = MaxHealth;
@@ -89,7 +88,7 @@ public class Enemy : MonoBehaviour {
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    protected virtual void OnCollisionEnter2D(Collision2D collision) {
         if ( collision.gameObject.GetComponent<BasicBullet>() != null ) {
             CurrentHealth--;
         }
