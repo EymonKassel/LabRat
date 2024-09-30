@@ -27,6 +27,7 @@ public class WaveManager : MonoBehaviour
     [Range(0, 2)] public int SupportEnemyLevel = 1;
 
     public int CurrentWave = 0;
+    public bool PickedUpgrade = false;
 
     private GameManager _gameManager;
 
@@ -39,13 +40,19 @@ public class WaveManager : MonoBehaviour
     }
 
     private void Update() {
-        if (_waves[CurrentWave].GetComponent<Wave>().IsCleared ) {
+        if (_waves[CurrentWave].GetComponent<Wave>().IsCleared)
+        {
+            PickedUpgrade = false;
             _waves[CurrentWave].SetActive(false);
+            _gameManager.ShowLevelUpPanel();
             CurrentWave = (CurrentWave + 1) % _waves.Length;
             WaveCounter++;
+        }
+        if( PickedUpgrade )
+        {
             _waves[CurrentWave].SetActive(true);
             _waves[CurrentWave].GetComponent<Wave>().IsCleared = false;
-            _gameManager.ShowLevelUpPanel();
+            _gameManager._waveCapacity = _waves[CurrentWave].GetComponent<Wave>().MaxEnemyAmount;
         }
     }
 }
