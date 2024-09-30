@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public int WaveCounter;
     public GameObject[] _waves;
     [Header("Melee Enemy")]
     public GameObject[] MeleeEnemyPrefabs;
@@ -41,6 +42,7 @@ public class WaveManager : MonoBehaviour
         if (_waves[CurrentWave].GetComponent<Wave>().IsCleared ) {
             _waves[CurrentWave].SetActive(false);
             CurrentWave = (CurrentWave + 1) % _waves.Length;
+            WaveCounter++;
             _waves[CurrentWave].SetActive(true);
             _waves[CurrentWave].GetComponent<Wave>().IsCleared = false;
             _gameManager.ShowLevelUpPanel();

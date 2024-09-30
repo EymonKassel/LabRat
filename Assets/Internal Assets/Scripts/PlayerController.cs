@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
+    public int DashCounter;
     public int CurrentHealth = 3;
     [SerializeField]
     private int _maxHealth = 1;
@@ -104,7 +103,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator Dash() {
-        
+        DashCounter++;
         _canDash = false;
         _isDashing = true;
         _dashTrailsPrefab.SetActive(true);
