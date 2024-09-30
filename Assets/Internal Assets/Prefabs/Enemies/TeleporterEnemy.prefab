@@ -401,7 +401,7 @@ MonoBehaviour:
   AudioManager: {fileID: 0}
   BulletPrefab: {fileID: 2962564878840992807, guid: 4268583bb4201c84d8604cfd502f0176, type: 3}
   _bulletForce: 20
-  _firePoint: {fileID: 0}
+  _firePoint: {fileID: 3378932425546875359}
 --- !u!70 &314849033185022005
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
