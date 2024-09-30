@@ -7,7 +7,7 @@ public class ShotgunEnemy : ShootingEnemy {
     [SerializeField]
     private float _sideBulletsAngle = 30f;
 
-    protected override void Shoot() {
+    protected override void Attack() {
         //_animator.SetBool("IsAttacking", true);
 
         ChooseBulletDirection(Direction);
@@ -21,6 +21,6 @@ public class ShotgunEnemy : ShootingEnemy {
     {
         GameObject bulletPrefab = Instantiate(BulletPrefab, transform.position, transform.rotation);
         bulletPrefab.GetComponent<Rigidbody2D>().AddForce(direction * _bulletForce, ForceMode2D.Impulse);
-        lastShotTime = Time.time;
+        lastAttackTime = Time.time;
     }
 }

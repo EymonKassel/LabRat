@@ -50,9 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 1
   MovementSpeed: 5
-  AttackRange: 1
+  AttackRange: 2
+  RetreatRange: 1
+  _cooldown: 1
   Rb: {fileID: 773384811379702456}
   Animator: {fileID: 5953718996092879699}
+  AudioManager: {fileID: 0}
 --- !u!70 &1668781452228108025
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
